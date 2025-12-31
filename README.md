@@ -94,6 +94,16 @@ BibleBridge uses a two-part setup process:
 
 ---
 
+## 🛠️ Built With
+BibleBridge is made possible by these amazing open-source projects:
+* **[Smarty](https://www.smarty.net/)** - Template Engine
+* **[Bootstrap 5](https://getbootstrap.com/)** - UI Framework
+* **[Quill](https://quilljs.com/)** - Rich Text Editor
+* **[PHPMailer](https://github.com/PHPMailer/PHPMailer)** - Email handling
+* **[jQuery](https://jquery.com/)** - JavaScript Library
+
+---
+
 ## ☕ Support the Project
 If BibleBridge is useful for your ministry or development work, consider supporting continued development:
 
