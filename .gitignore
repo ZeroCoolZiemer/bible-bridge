@@ -1,0 +1,16 @@
+# Configuration files
+config/config.php
+db/articles-db.php
+
+# Dependencies
+vendor/
+
+# Installer & Utility scripts
+setup.php
+setup-admin.php
+match-columns.php
+db/import.php
+
+# System files
+.DS_Store
+Thumbs.db
