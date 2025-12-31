@@ -1,0 +1,16 @@
+.book-list {
+	max-width: 500px;
+	margin: 0 auto;
+}
+.book-item {
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.book-item a {
+	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
