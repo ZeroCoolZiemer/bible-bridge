@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holy Bible Software Setup</title>
+    <title>BibleBridge Framework Setup</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -39,11 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row justify-content-center">
 
             <div class="col-md-6">
-                <h2 class="text-center text-danger">Holy Bible Software Setup</h2>
+                <h2 class="text-danger">BibleBridge Framework Setup</h2>
                 <form method="post">
                     <div class="alert alert-danger d-inline-block" role="alert">
                     The permissions of <b>./config/config.php</b> must be set to 777 temporarily during the setup process.
-		    For comprehensive installation instructions, please refer to the SETUP.PDF documentation.</div>
+		    For comprehensive installation instructions, please refer to the README.md documentation.</div>
                    
                     <div class="mb-3">
                         <label for="host" class="form-label"><b>Host</b>:</label> (Recommended: 127.0.0.1)
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username:</label>
-                        <input type="password" class="form-control" id="username" name="username" required autocomplete="off">
+                        <input type="text" class="form-control" id="username" name="username" required autocomplete="off">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password:</label>
