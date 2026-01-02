@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom d-print-none">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Holy Bible</a>
+        <a class="navbar-brand" href="#">BibleBridge</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,7 +11,7 @@
                 <li class="nav-item"><a class="nav-link {if $activePage == 'bible'}active{/if}" href="/old-testament">Bible</a></li>
                 <li class="nav-item"><a class="nav-link {if $activePage == 'articles'}active{/if}" href="/articles">Articles</a></li>
                 <li class="nav-item"><a class="nav-link {if $activePage == 'contact'}active{/if}" href="/contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link {if $activePage == 'purchase'}active{/if}" href="/get-started">Get Started</a></li>
+                <li class="nav-item"><a class="nav-link {if $activePage == 'setup' || $activePage == 'get-started'}active{/if}" href="/get-started">Get Started</a></li>
                 {if isset($smarty.session.user)}
                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle {if $activePage == 'admin'}active{/if}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 			{if $smarty.session.role == 'admin' || $smarty.session.role == 'demo'}Admin{else}User{/if}</a>
