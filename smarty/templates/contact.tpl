@@ -32,7 +32,7 @@
                         <select class="form-select" id="subject" name="subject">
                             <option value="" selected disabled>Select a subject</option>
                             <option value="General Inquiry">General Inquiry</option>
-                            <option value="Bible Software Purchase">Bible Software Purchase</option>
+                            <option value="Project Contribution">Project Contribution</option>
                             <option value="Technical Support">Technical Support</option>
                             <option value="Feature Request">Feature Request</option>
                             <option value="Other">Other</option>
@@ -64,5 +64,6 @@
     {include file="analytics.tpl"}
     {include file="bookmark.tpl"}
 </body>
+
 
 </html>
