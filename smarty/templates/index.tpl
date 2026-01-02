@@ -17,7 +17,7 @@
     {include file="menu.tpl"}
     <div class="hero-section">
         <div class="hero-text text-white">
-            <h1>Powerful Bible Software</h1>
+            <h1>BibleBridge Framework</h1>
             <p class="verse-of-day">Convert your Bible database into a beautiful, functional, and searchable resource.</p>
             <p>Includes an easy-to-use CMS, create, edit, and delete articles with ease.</p>
         </div>
@@ -53,5 +53,6 @@
     {include file="analytics.tpl"}
     {include file="bookmark.tpl"}
 </body>
+
 
 </html>
