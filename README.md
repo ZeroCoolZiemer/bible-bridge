@@ -16,6 +16,16 @@ Whether you are:
 
 BibleBridge is built to adapt to your data and workflow.
 
+## 🛠️ System Requirements
+
+To ensure stability and performance with **Smarty 5**, BibleBridge v1.5 requires:
+
+* **PHP:** 8.1 or higher (Required for Smarty 5.4 compatibility)
+* **Composer:** Required to manage and install core dependencies
+* **Database:** MySQL 5.7+ or MariaDB 10.3+ (Required for full `utf8mb4` Bible text support)
+* **Core Extensions:** `pdo_mysql`, `mbstring`, `openssl`, and `json`
+* **Web Server:** Apache (with `mod_rewrite` enabled for SEO-friendly URLs) or Nginx
+
 ---
 
 ## 🚀 Features
@@ -52,12 +62,14 @@ BibleBridge uses a two-part setup process:
 **(1) Bible Reader configuration** and **(2) CMS configuration**.
 
 ### Part 1: Bible Reader Setup
-1. Upload all files to your web server, preserving the directory structure  
-2. Temporarily set `./config/config.php` permissions to `777`  
-3. Visit `yourwebsite.com/setup.php`  
-4. Enter database host, name, and credentials  
-5. Map your Bible table columns (Book, Chapter, Verse, Text)  
-6. **Security:** Delete `setup.php` and `match-columns.php` after setup  
+1. Upload all files to your web server, preserving the directory structure
+2. From the project root, run:
+   `composer install`
+3. Temporarily set `./config/config.php` permissions to `777`  
+4. Visit `yourwebsite.com/setup.php`  
+5. Enter database host, name, and credentials  
+6. Map your Bible table columns (Book, Chapter, Verse, Text)  
+7. **Security:** Delete `setup.php` and `match-columns.php` after setup  
 
 ---
 
