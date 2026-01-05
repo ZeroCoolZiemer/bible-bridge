@@ -1,7 +1,7 @@
-# 📖 BibleBridge v1.5  
+# 📖 BibleBridge Framework v1.5  
 **A flexible web platform for presenting Bible databases and ministry content.**
 
-BibleBridge is a self-hosted web application that connects raw Bible databases to a modern, user-friendly web interface. It is designed for developers, churches, and ministries that need a reliable way to display Scripture, manage related content, and integrate Bible data into their own systems.
+BibleBridge Framework is a self-hosted Bible-reading engine designed to bridge the gap between raw Scripture databases and modern web interfaces. It serves as a flexible foundation for developers, churches, and ministries to build reliable Scripture-based platforms, manage related ministry content, and integrate Bible data into their own custom ecosystems.
 
 ---
 
@@ -56,6 +56,23 @@ This allows ministries to keep Scripture and teaching materials in one unified p
 
 ---
 
+### 🌱 Adapt to Evolve
+
+BibleBridge is more than a web application — it’s a framework for building adaptable Bible-based platforms. At its core, it uses **Data Abstraction** to connect to any existing Bible database without forcing a rigid schema.
+
+All core settings are mapped through `./config/config.php`, allowing you to:
+
+- **Schema Mapping:** Link any existing SQL Bible table to the framework. By mapping **Book Names** directly from your database, BibleBridge remains **language-agnostic**, preserving your specific nomenclature and translations (e.g., "Juan" vs. "John") without hardcoded restrictions.  
+  *(Note: All Bible books should be present in your dataset; mapping a single book only is not supported.)*
+
+- **Seamless Swapping:** Switch Bible versions or entire datasets in seconds—no changes to core logic required.
+
+- **Dynamic Growth:** Adjust display behavior and data sources as your project evolves, without rewrites.
+
+BibleBridge provides a flexible foundation so developers, churches, and ministries can **build, customize, and expand** Bible and content platforms on top of a consistent framework.
+
+---
+
 ## 🔧 Installation & Configuration
 
 BibleBridge uses a two-part setup process:  
@@ -65,7 +82,7 @@ BibleBridge uses a two-part setup process:
 1. Upload all files to your web server, preserving the directory structure
 2. From the project root, run:
    `composer install`
-3. Temporarily set `./config/config.php` permissions to `777`  
+3. Before running the setup script, ensure that `./config/config.php` **exists** and is **writable** by the web server.
 4. Visit `yourwebsite.com/setup.php`  
 5. Enter database host, name, and credentials  
 6. Map your Bible table columns (Book, Chapter, Verse, Text)  
