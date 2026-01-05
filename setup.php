@@ -1,4 +1,8 @@
 <?php
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_only_cookies', 1);
+if (isset($_SERVER['HTTPS'])) ini_set('session.cookie_secure', 1);
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -42,11 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2 class="text-danger">BibleBridge Framework Setup</h2>
                 <form method="post">
                     <div class="alert alert-danger d-inline-block" role="alert">
-                    The permissions of <b>./config/config.php</b> must be set to 777 temporarily during the setup process.
+                    The permissions of <b>./config/config.php</b> must be writable during the setup process.
 		    For comprehensive installation instructions, please refer to the README.md documentation.</div>
                    
                     <div class="mb-3">
-                        <label for="host" class="form-label"><b>Host</b>:</label> (Recommended: 127.0.0.1)
+                        <label for="host" class="form-label"><b>Host</b>:</label>
+			<small class="text-muted">(usually <code>127.0.0.1</code> or <code>localhost</code>)</small>
                         <input type="text" class="form-control" id="host" name="host" value="127.0.0.1" required autocomplete="off">
                     </div>
                     <div class="mb-3">
