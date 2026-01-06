@@ -39,7 +39,6 @@
                     <i class="bi bi-mic-fill"></i>
                 </button>
                 <input autocomplete="off" name="searchTerm" id="word" class="form-control rounded-start-0 rounded-end-0" type="search" placeholder="Search" aria-label="Search" style="width: 250px;">
-                <input type="hidden" name="previous_search" value="{$bookname[$key]}">
                 <button type="submit" class="btn btn-light rounded-start-0"><i class="bi bi-search"></i></button>
             </form>
         </div>

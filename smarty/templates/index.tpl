@@ -24,8 +24,8 @@
     </div>
     <div class="container text-center mt-4">
         <div class="nav-links">
-            <a class="btn btn-dark" href="/old-testament">Old Testament</a>
-            <a class="btn btn-dark" href="/new-testament">New Testament</a>
+            <a class="btn btn-dark" href="/bible/{$selectedVersion}/old-testament">Old Testament</a>
+            <a class="btn btn-dark" href="/bible/{$selectedVersion}/new-testament">New Testament</a>
             <a class="btn btn-dark" href="/get-started">Get Started</a>
             <a class="btn btn-dark" href="/articles">Articles</a>
         </div>
@@ -53,6 +53,5 @@
     {include file="analytics.tpl"}
     {include file="bookmark.tpl"}
 </body>
-
 
 </html>

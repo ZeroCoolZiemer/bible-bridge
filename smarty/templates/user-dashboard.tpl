@@ -21,7 +21,7 @@
       <div class="row"> {foreach from=$notes item=note} <div class="col-md-4 mb-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title text-center">{$note.bible_reference}</h5>
+              <h5 class="card-title text-center text-danger">{$note.bible_reference}</h5>
               <p class="card-text">{$note.note|strip_tags}</p>
             </div>
           </div>
@@ -37,6 +37,6 @@
         </nav>
       </div> {/if}
     </div> {include file="footer.tpl"} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/confirm-delete.js"></script>
+    <script src="/js/confirm-delete.js"></script>  {include file="bookmark.tpl"}
   </body>
 </html>

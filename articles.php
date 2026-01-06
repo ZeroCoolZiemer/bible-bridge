@@ -1,13 +1,10 @@
 <?php
-session_start();
+require_once('init.php');
 
 $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 
 $_SESSION['currentPage'] = $currentPage;
 
-require_once('smarty_loader.php');
-require_once('settings.php');
-require_once($path . '/config.php');
 include($db_path . '/articles-db.php');
 
 $articlesPerPage = 10;

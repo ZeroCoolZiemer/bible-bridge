@@ -1,8 +1,15 @@
 RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-# Search Bible
-RewriteRule ^bible/([^/]*)/([^/]*)$ /search-bible.php?book=$1&chapter=$2 [L]
-RewriteRule ^bible/([^/]*)/([^/]*)/([^/]*)$ /search-bible.php?book=$1&chapter=$2&verse=$3 [L]
+RewriteRule ^bible/([a-z0-9]+)/old-testament$ /old-testament.php?v=$1 [L,QSA]
+RewriteRule ^bible/([a-z0-9]+)/new-testament$ /new-testament.php?v=$1 [L,QSA]
+
+RewriteRule ^bible/([^/]+)/([^/]+)/([^/]+)/([^/]+)/?$ search-bible.php?v=$1&book=$2&chapter=$3&verse=$4 [L,QSA]
+
+RewriteRule ^bible/([^/]+)/([^/]+)/([^/]+)/?$ search-bible.php?v=$1&book=$2&chapter=$3 [L,QSA]
+
 RewriteRule ^article/([^/]+)$ article-details.php?slug=$1 [L,QSA]
 
 # Remove .php extension

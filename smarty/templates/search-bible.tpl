@@ -26,10 +26,10 @@
                         <li class="breadcrumb-item"><a class="text-decoration-none" href="/">Home</a></li>
                         {if empty($Error)}
                         <li class="breadcrumb-item">
-                            {if !empty($key) AND $key < 40} <a class="text-decoration-none" href="/old-testament">OT</a>
+                            {if !empty($key) AND $key < 40} <a class="text-decoration-none" href="/bible/{$selectedVersion}/old-testament">OT</a>
                                 {/if}
                                 {if !empty($key) AND $key > 39}
-                                <a class="text-decoration-none" href="/new-testament">NT</a>
+                                <a class="text-decoration-none" href="/bible/{$selectedVersion}/new-testament">NT</a>
                                 {/if}
                         </li>
                         <li class="breadcrumb-item">
@@ -54,7 +54,7 @@
                 <button type="button" onclick="startDictation()" class="btn btn-light rounded-end-0"><i class="bi bi-mic-fill"></i></button>
                 <input autocomplete="off" name="searchTerm" id="word" class="form-control rounded-start-0 rounded-end-0" type="search" placeholder="Search" aria-label="Search" style="width: 250px;">
                 <input type="hidden" name="previous_search" value="{$bookname[$key]}">
-                <input type="hidden" id="userId" value="{$smarty.session.user}">
+                <input type="hidden" id="userId" value="{$smarty.session.user|default:''}">
                 <button type="submit" class="btn btn-light rounded-start-0"><i class="bi bi-search"></i></button>
             </form>
         </div>
@@ -68,10 +68,10 @@
                     <div id="topBar" class="d-flex justify-content-between flex-fill p-1 border rounded bg-light d-print-none">
                         <div class="p-1">
                             {if $chapter eq 1}
-                            <a style="{if ($bookname[$key]|lower) == "genesis"}visibility:hidden;{/if}" href="{if ($bookname[$key]|lower) neq "genesis"}{$website}bible/{$bookname[$key-1]|lower|replace:" ":"+"}/{$max_chapters[$key-1]}{/if}" class="btn btn-dark btn-sm text-nowrap">PREV</a>
+                            <a style="{if ($bookname[$key]|lower) == "genesis"}visibility:hidden;{/if}" href="{if ($bookname[$key]|lower) neq "genesis"}{$website}bible/{$selectedVersion}/{$bookname[$key-1]|lower|replace:" ":"+"}/{$max_chapters[$key-1]}{/if}" class="btn btn-dark btn-sm text-nowrap">PREV</a>
                             {/if}
                             {if $chapter != 1}
-                            <a href="{$website}bible/{$bookname[$key]|lower|replace:" ":"+"}/{$chapter-1}" class="btn btn-dark btn-sm text-nowrap">PREV</a>
+                            <a href="{$website}bible/{$selectedVersion}/{$bookname[$key]|lower|replace:" ":"+"}/{$chapter-1}" class="btn btn-dark btn-sm text-nowrap">PREV</a>
                             {/if}
                         </div>
 			<div class="p-1 d-flex align-items-center">
@@ -79,32 +79,32 @@
                         </div>
                         <div class="p-1">
                             {if $chapter != $max}
-                            <a href="{$website}bible/{$bookname[$key]|lower|replace:" ":"+"}/{$chapter+1}" class="btn btn-dark btn-sm text-nowrap">NEXT</a>
+                            <a href="{$website}bible/{$selectedVersion}/{$bookname[$key]|lower|replace:" ":"+"}/{$chapter+1}" class="btn btn-dark btn-sm text-nowrap">NEXT</a>
                             {/if}
                             {if $chapter eq $max}
-                            <a style="{if ($bookname[$key]|lower) == "revelation"}visibility:hidden;{/if}" href="{if ($book|lower) neq "revelation"}{$website}bible/{$bookname[$key+1]|lower|replace:" ":"+"}/1{/if}" class="btn btn-dark btn-sm text-nowrap">NEXT</a>
+                            <a style="{if ($bookname[$key]|lower) == "revelation"}visibility:hidden;{/if}" href="{if ($book|lower) neq "revelation"}{$website}bible/{$selectedVersion}/{$bookname[$key+1]|lower|replace:" ":"+"}/1{/if}" class="btn btn-dark btn-sm text-nowrap">NEXT</a>
                             {/if}
                         </div>
                     </div>
                     <div class="page-header text-center pb-2 mt-4 mb-2">
-                        <h1><span id="bookName" class="book-name">{$row.$bookColumn}</span> <span id="chapterNumber">{$chapter}</span>{if isset($verse) AND $verse != ""}:{$verse}{/if}</h1>
+                        <h1><span id="bookName" class="book-name">{$row[$bookNameColumn]}</span> <span id="chapterNumber">{$chapter}</span>{if isset($verse) AND $verse != ""}:{$verse}{/if}</h1>
                     </div>
                     {/if}
                     <p class="verses"><span class="verseNumber">{$row[$verseColumn]}</span> {$row[$verseTextColumn]}</p>
                     {if $row@last}
                     <div class="text-center mb-3">
                         {if $verse != ""}
-                        <a class="btn btn-dark btn-sm d-print-none" href="{$website}bible/{if isset($bookname[$key])}{$bookname[$key]|lower|replace:" ":"+"}{/if}/{if isset($chapter)}{$chapter}{/if}"> <i class="bi bi-list"></i> Context
+                        <a class="btn btn-dark btn-sm d-print-none" href="{$website}bible/{$selectedVersion}/{if isset($bookname[$key])}{$bookname[$key]|lower|replace:" ":"+"}{/if}/{if isset($chapter)}{$chapter}{/if}"> <i class="bi bi-list"></i> Context
                         </a>
                         {/if}
                     </div>
                     <div id="bottomBar" class="d-flex justify-content-between flex-fill p-1 border rounded bg-light d-print-none">
                         <div class="p-1">
                             {if $chapter eq 1 AND ($bookname[$key]|lower) != "genesis"}
-                            <a href="{$website}bible/{$bookname[$key-1]|lower|replace:" ":"+"}/{$max_chapters[$key-1]}" class="btn btn-dark btn-sm text-nowrap">PREV</a>
+                            <a href="{$website}bible/{$selectedVersion}/{$bookname[$key-1]|lower|replace:" ":"+"}/{$max_chapters[$key-1]}" class="btn btn-dark btn-sm text-nowrap">PREV</a>
                             {/if}
                             {if $chapter != 1}
-                            <a href="{$website}bible/{$bookname[$key]|lower|replace:" ":"+"}/{$chapter-1}" class="btn btn-dark btn-sm text-nowrap">PREV</a>
+                            <a href="{$website}bible/{$selectedVersion}/{$bookname[$key]|lower|replace:" ":"+"}/{$chapter-1}" class="btn btn-dark btn-sm text-nowrap">PREV</a>
                             {/if}
                         </div>
 			<div class="p-1 d-flex align-items-center">
@@ -127,10 +127,10 @@
 			</div>
                         <div class="p-1">
                             {if $chapter != $max}
-                            <a href="{$website}bible/{$bookname[$key]|lower|replace:" ":"+"}/{$chapter+1}" class="btn btn-dark btn-sm text-nowrap">NEXT</a>
+                            <a href="{$website}bible/{$selectedVersion}/{$bookname[$key]|lower|replace:" ":"+"}/{$chapter+1}" class="btn btn-dark btn-sm text-nowrap">NEXT</a>
                             {/if}
                             {if $chapter eq $max AND ($bookname[$key]|lower) neq "revelation"}
-                            <a href="{$website}bible/{$bookname[$key+1]|lower|replace:" ":"+"}/1" class="btn btn-dark btn-sm text-nowrap">NEXT</a>
+                            <a href="{$website}bible/{$selectedVersion}/{$bookname[$key+1]|lower|replace:" ":"+"}/1" class="btn btn-dark btn-sm text-nowrap">NEXT</a>
                             {/if}
                         </div>
                     </div>

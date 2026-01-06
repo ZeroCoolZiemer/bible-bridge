@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Denied</title>
+    <title>Access Denied - Holy Bible Articles</title>
     {include file="bootstrap-head.tpl"}
     {include file="fonts.tpl"}
     {include file="favicon.tpl"}

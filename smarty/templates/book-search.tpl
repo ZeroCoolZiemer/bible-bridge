@@ -34,7 +34,7 @@
                         {assign var="v" value="1"}
                         {section name=book loop=$max}
                         <li class="list-group-item w-50 text-nowrap d-flex justify-content-center border-0" style="background:whitesmoke;">
-                            <a class="text-decoration-none" href="{$website}bible/{$bookname[$key]|lower|replace:' ':'+'}/{$v++}">
+                            <a class="text-decoration-none" href="{$website}bible/{$selectedVersion}/{$bookname[$key]|lower|replace:' ':'+'}/{$v++}">
                                 {$book|capitalize|truncate_special} Ch. {$i++}
                             </a>
                         </li>

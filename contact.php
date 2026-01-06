@@ -1,10 +1,6 @@
 <?php
-session_start();
-
-require_once('smarty_loader.php');
+require_once('init.php');
 require_once('functions.php');
-require_once('settings.php');
-require_once($path . '/config.php');
 require_once('vendor/autoload.php');
 
 use PHPMailer\PHPMailer\PHPMailer;

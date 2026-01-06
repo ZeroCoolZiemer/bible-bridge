@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once('init.php');
 
 if (!isset($_SESSION['user'])) {
     header("Location: login");
@@ -11,8 +11,6 @@ if (!isset($_SESSION['role']) || !in_array($_SESSION['role'], ['admin'])) {
     exit;
 }
 
-require_once('settings.php');
-require_once($path . '/config.php');
 include($db_path . '/articles-db.php');
 include_once('slug-functions.php');
 

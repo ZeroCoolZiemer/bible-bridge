@@ -1,8 +1,8 @@
-<div id="notesModal" data-book="{$row[$bookColumn]}" data-chapter="{$chapter}" data-user_id="{$smarty.session.user}" class="modal fade" tabindex="-1" aria-labelledby="notesModalLabel" aria-hidden="true">
+<div id="notesModal" data-book="{$row[$bookNameColumn]}" data-chapter="{$chapter}" data-user_id="{$smarty.session.user|default:''}" class="modal fade" tabindex="-1" aria-labelledby="notesModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="notesModalLabel">{$row[$bookColumn]} {$chapter} - Notes</h5>
+                    <h5 class="modal-title" id="notesModalLabel">{$row[$bookNameColumn]} {$chapter} - Notes</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

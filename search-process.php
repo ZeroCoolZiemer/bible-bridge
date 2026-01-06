@@ -1,8 +1,6 @@
 <?php
+require_once('init.php');
 require_once('functions.php');
-require_once('settings.php');
-require_once($path . '/config.php');
-require_once($db_path . '/connect.php');
 include('cache-books.php');
 
 $searchTerm = isset($_GET['searchTerm']) ? urldecode($_GET['searchTerm']) : '';
@@ -164,10 +162,11 @@ $find_book = preg_replace('/\s+/', '+', $find_book);
 $find_book = strtolower($find_book);
 
 if (empty($book['verses'])) {
-    header('Location: ' . $website . 'bible/' . $find_book . '/' . $chapter);
+    header('Location: ' . $website . 'bible/' . $selectedVersion .'/' . $find_book . '/' . $chapter);
     exit();
 } else {
-    header('Location: ' . $website . 'bible/' . $find_book . '/' . $chapter . '/' . $verses);
+    header('Location: ' . $website . 'bible/' . $selectedVersion .'/' . $find_book . '/' . $chapter . '/' . $verses);
     exit();
 }
 ?>
+

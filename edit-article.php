@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once('init.php');
 
 if (!isset($_SESSION['user'])) {
     header("Location: login");
@@ -10,10 +10,6 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['role'], ['admin', 'demo'])
     header("Location: unauthorized");
     exit;
 }
-
-require_once('smarty_loader.php');
-require_once('settings.php');
-require_once($path . '/config.php');
 
 include($db_path . '/articles-db.php');
 

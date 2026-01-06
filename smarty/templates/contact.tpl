@@ -43,7 +43,7 @@
                         <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message" autocomplete="off"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="captcha" class="form-label">SOLVE: What is the sixth word in <a class="text-decoration-none" href="{$website}bible/revelation/22/1" target="_blank">Revelation 22:1</a>?</label>
+                        <label for="captcha" class="form-label">SOLVE: What is the sixth word in <a class="text-decoration-none" href="{$website}bible/{$selectedVersion}/revelation/22/1" target="_blank">Revelation 22:1</a>?</label>
                         <input type="text" class="form-control" name="captcha" id="captcha" placeholder="Enter the answer" autocomplete="off">
                     </div>
                     <div class="text-center mt-3">
@@ -64,6 +64,5 @@
     {include file="analytics.tpl"}
     {include file="bookmark.tpl"}
 </body>
-
 
 </html>

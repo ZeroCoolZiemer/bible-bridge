@@ -23,7 +23,7 @@
                         <li class="breadcrumb-item"><a class="text-decoration-none" href="/">Home</a></li>
                         {if empty($Error)}
                         <li class="breadcrumb-item">
-                            <a class="text-decoration-none" href="/old-testament">OT</a>
+                            <a class="text-decoration-none" href="/bible/{$selectedVersion}/old-testament">OT</a>
                         </li>
                         <li class="breadcrumb-item">
                             NT
@@ -42,7 +42,7 @@
                 {foreach $newTestamentBooks as $key => $book}
                 <div class="col">
                     <div class="book-item">
-                        <a href="{$website}bible/{$book|lower|replace:' ':'+'}/1" title="{$book}">{$bookTitleList[$key]}</a> <span class="badge bg-dark ms-2 rounded-pill">{$max_chapters[$key]}</span>
+                        <a href="{$website}bible/{$selectedVersion}/{$book|lower|replace:' ':'+'}/1" title="{$book}">{$bookTitleList[$key]}</a> <span class="badge bg-dark ms-2 rounded-pill">{$max_chapters[$key]}</span>
                     </div>
                 </div>
                 {/foreach}

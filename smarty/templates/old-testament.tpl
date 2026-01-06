@@ -26,7 +26,7 @@
                             OT
                         </li>
                         <li class="breadcrumb-item">
-                            <a class="text-decoration-none" href="/new-testament">NT</a>
+                            <a class="text-decoration-none" href="/bible/{$selectedVersion}/new-testament">NT</a>
                         </li>
                         {/if}
                         {include file="share-url.tpl"}
@@ -42,7 +42,7 @@
                 {foreach $oldTestamentBooks as $key => $book}
                 <div class="col">
                     <div class="book-item">
-                        <a class="link" href="{$website}bible/{$book|lower|replace:' ':'+'|replace:'psalms':'psalm'}/1" title="{$book}">{$bookTitleList[$key]}</a> <span class="badge bg-dark ms-2 rounded-pill">{$max_chapters[$key]}</span>
+                        <a class="link" href="{$website}bible/{$selectedVersion}/{$book|lower|replace:' ':'+'|replace:'psalms':'psalm'}/1" title="{$book}">{$bookTitleList[$key]}</a> <span class="badge bg-dark ms-2 rounded-pill">{$max_chapters[$key]}</span>
                     </div>
                 </div>
                 {/foreach}

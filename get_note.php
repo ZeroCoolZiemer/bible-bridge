@@ -5,9 +5,7 @@ if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQ
     exit;
 }
 
-require_once('smarty_loader.php');
-require_once('settings.php');
-require_once($path . '/config.php');
+require_once('init.php');
 include($db_path . '/articles-db.php');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {

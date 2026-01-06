@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
             trigger: 'manual',
             title: 'Bookmark Saved!'
         });
-
         bookmarkButton.addEventListener("click", saveBookmark);
     }
 
@@ -20,17 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function saveBookmark() {
         let bookmarks = getBookmarks();
         const currentUrl = window.location.href;
-
-        // Get the book name dynamically from the current page
         const bookNameElement = document.getElementById("bookName"); 
         const bookName = bookNameElement ? bookNameElement.textContent : "Unknown Book";
 
-        // Check if bookmark already exists
         if (!bookmarks.some(bookmark => bookmark.url === currentUrl)) {
             if (bookmarks.length >= maxBookmarks) {
-                bookmarks.pop(); // Remove the oldest bookmark
+                bookmarks.pop();
             }
-            bookmarks.unshift({ url: currentUrl, bookName }); // Store both URL and book name
+            bookmarks.unshift({ url: currentUrl, bookName });
             localStorage.setItem(storageKey, JSON.stringify(bookmarks));
             updateMenu();
             showTooltip("Bookmark Saved!");
@@ -60,21 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 link.href = url;
                 link.classList.add("dropdown-item");
 
-                const match = url.match(/bible\/([^\/]+)\/(\d+)(?:\/(\d+)(?:-(\d+))?)?/);
+                const match = url.match(/bible\/[^\/]+\/([^\/]+)\/(\d+)(?:\/([\d\-]+))?/);
+
                 if (match) {
                     const chapter = match[2];
-                    const verseStart = match[3];
-                    const verseEnd = match[4];
-
-                    if (verseStart && verseEnd) {
-                        link.textContent = `${capitalizeWords(bookName)} ${chapter}:${verseStart}-${verseEnd}`;
-                    } else if (verseStart) {
-                        link.textContent = `${capitalizeWords(bookName)} ${chapter}:${verseStart}`;
-                    } else {
-                        link.textContent = `${capitalizeWords(bookName)} ${chapter}`;
-                    }
+                    const verse = match[3];
+                    link.textContent = `${capitalizeWords(bookName)} ${chapter}${verse ? ':' + verse : ''}`;
                 } else {
-                    link.textContent = bookName || url;
+                    link.textContent = capitalizeWords(bookName);
                 }
 
                 listItem.appendChild(link);
@@ -83,15 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-function capitalizeWords(str) {
-    return str.replace(/\b\p{L}+\b/gu, function (word, index, fullString) {
-        // Only treat "of" as an exception and keep it lowercase unless it's the first or last word
-        if (word.toLowerCase() === 'of' && index !== 0 && index !== fullString.length - word.length) {
-            return word.toLowerCase();
-        }
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    });
-}
+    function capitalizeWords(str) {
+        return str.replace(/\b\p{L}+\b/gu, function (word, index, fullString) {
+            if (word.toLowerCase() === 'of' && index !== 0 && index !== fullString.length - word.length) {
+                return word.toLowerCase();
+            }
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        });
+    }
 
     updateMenu();
 });
