@@ -3,6 +3,12 @@
 
 BibleBridge Framework is a self-hosted Bible-reading engine designed to bridge the gap between raw Scripture databases and modern web interfaces. It serves as a flexible foundation for developers, churches, and ministries to build reliable Scripture-based platforms, manage related ministry content, and integrate Bible data into their own custom ecosystems.
 
+## 🎥 Framework Demo
+
+This short video demonstrates how the framework dynamically adapts to different Bible versions (KJV / SEG), evolving both content and search behavior in real time.  
+
+▶️ [Watch the demo](https://youtu.be/YFuIX6sQVVM)
+
 ---
 
 ## 🎯 Purpose
@@ -82,7 +88,7 @@ BibleBridge uses a two-part setup process:
 1. Upload all files to your web server, preserving the directory structure
 2. From the project root, run:
    `composer install`
-3. Before running the setup script, ensure that `./config/config.php` **exists** and is **writable** by the web server.
+3. Before running the setup script, ensure that `./config/config.php` and `./smarty/templates_c` are **writable** by the web server
 4. Visit `yourwebsite.com/setup.php`  
 5. Enter database host, name, and credentials  
 6. Map your Bible table columns (Book, Chapter, Verse, Text)  
