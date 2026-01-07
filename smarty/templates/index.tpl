@@ -46,6 +46,11 @@
                 {/foreach}
             </div>
         </div>
+	{if $using_json}
+	<div style="display: inline-block;" class="alert alert-warning text-start" role="alert">
+    		<i style="color: #4F738E;" class="bi bi-database-fill-gear"></i> <strong>System Configuration Required</strong>: Currently operating via <strong>Local-JSON Data</strong>.<br> 
+		To enable <strong>Article Management</strong> and <strong>Secure Access</strong>, please <strong>initialize</strong> your <strong>Articles Database</strong>.</div>
+	{/if}
     </div>
     {include file="footer.tpl"}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

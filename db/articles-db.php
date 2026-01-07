@@ -11,6 +11,5 @@ try {
     );
 } catch (PDOException $e) {
     error_log('Article Database connection failed: ' . $e->getMessage());
-    die('Article database connection failed. Please try again later.');
 }
 ?>
