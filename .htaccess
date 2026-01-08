@@ -7,29 +7,12 @@ RewriteRule ^bible/([a-z0-9]+)/old-testament$ /old-testament.php?v=$1 [L,QSA]
 RewriteRule ^bible/([a-z0-9]+)/new-testament$ /new-testament.php?v=$1 [L,QSA]
 
 RewriteRule ^bible/([^/]+)/([^/]+)/([^/]+)/([^/]+)/?$ search-bible.php?v=$1&book=$2&chapter=$3&verse=$4 [L,QSA]
-
 RewriteRule ^bible/([^/]+)/([^/]+)/([^/]+)/?$ search-bible.php?v=$1&book=$2&chapter=$3 [L,QSA]
-
-RewriteRule ^article/([^/]+)$ article-details.php?slug=$1 [L,QSA]
 
 # Remove .php extension
 RewriteRule ^old-testament$ /old-testament.php [L]
 RewriteRule ^new-testament$ /new-testament.php [L]
-
 RewriteRule ^about$ /about.php [L]
-RewriteRule ^admin-dashboard$ /admin-dashboard.php [L]
-RewriteRule ^articles$ /articles.php [L]
 RewriteRule ^contact$ /contact.php [L]
-RewriteRule ^create-article$ /create-article.php [L]
 RewriteRule ^get-started$ /get-started.php [L]
-RewriteRule ^login$ /login.php [L]
-RewriteRule ^logout$ /logout.php [L]
-RewriteRule ^profile$ /profile.php [L]
-RewriteRule ^register$ /register.php [L]
 RewriteRule ^unauthorized$ /unauthorized.php [L]
-RewriteRule ^user-dashboard$ /user-dashboard.php [L]
-
-#Pagination
-RewriteRule ^articles/([0-9]+)$ articles.php?page=$1 [L,QSA]
-RewriteRule ^admin-dashboard/([0-9]+)$ admin-dashboard.php?page=$1 [L,QSA]
-RewriteRule ^user-dashboard/([0-9]+)$ user-dashboard.php?page=$1 [L,QSA]

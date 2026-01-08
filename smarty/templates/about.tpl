@@ -52,34 +52,6 @@
             </div>
         </div>
 
-        <h2 class="mt-5">Ministry & Content Tools</h2>
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <div class="card text-dark h-100 border-1 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Article Management <i class="bi bi-journal-text ms-1" style="color:#000000"></i></h5>
-                        <p class="card-text">A built-in system to publish and share articles, helping users share theological insights and resources with their community.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-dark h-100 border-1 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Rich Text Editing <i class="bi bi-pencil-square ms-1" style="color:#ffc107"></i></h5>
-                        <p class="card-text">Integrated with <strong>Quill JS</strong> for a seamless writing experience when drafting articles or creating study guides. <a class="text-decoration-none fw-bold" href="/login">Test CMS</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-dark h-100 border-1 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Automated Metadata <i class="bi bi-search ms-1" style="color:#6c757d"></i></h5>
-                        <p class="card-text">The system automatically generates meta descriptions for articles, ensuring high technical standards for search engine indexing and visibility.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="bg-dark text-white p-5 rounded-3 mt-5 shadow">
             <div class="row align-items-center">
                 <div class="col-md-7">
@@ -94,7 +66,6 @@
                     <ul class="list-unstyled">
                         <li><i class="bi bi-check2-circle text-success me-2"></i> Bootstrap 5</li>
                         <li><i class="bi bi-check2-circle text-success me-2"></i> Smarty Template Engine</li>
-                        <li><i class="bi bi-check2-circle text-success me-2"></i> Quill JS Editor</li>
                         <li><i class="bi bi-check2-circle text-success me-2"></i> jQuery</li>
                         <li><i class="bi bi-check2-circle text-success me-2"></i> Open Source SQL Support</li>
                     </ul>

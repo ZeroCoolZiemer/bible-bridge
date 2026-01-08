@@ -66,6 +66,9 @@ try {
                 }
             }
         }
+	$bible_permissions = trim($_POST['bible_permissions']);
+
+	$mappings['permissions'] = $bible_permissions;
 
         $bibles[$versionName] = [
             'dbHost'     => $_SESSION['db_host'],
@@ -187,8 +190,13 @@ try {
                         <label class="form-label small fw-bold">Book ID (Column #):</label>
                         <input type="number" name="bookIDColumn" class="form-control" min="1" max="<?= count($columns) ?>" required>
                     </div>
+		    <div class="col-12">
+    			<label class="form-label fw-bold">Bible Permissions:</label>
+    			<input type="text" name="bible_permissions" class="form-control" required
+           		value="<?= isset($_POST['bible_permissions']) ? htmlspecialchars($_POST['bible_permissions']) : '' ?>">
+    		    <div class="form-text">Example: King James Version (Public Domain)</div>
+		    </div>
                 </div>
-
                 <button type="submit" class="btn btn-success btn-lg w-100 mt-4">Save Version Details</button>
             </div>
         </div>
@@ -199,3 +207,6 @@ try {
 
 </body>
 </html>
+
+
+

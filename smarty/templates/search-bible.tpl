@@ -64,7 +64,6 @@
                     {foreach from=$jesus item=row}
                     {assign var=foreign value=$row[$bookColumn]}
                     {if $row@first}
-		    {include file="notes.tpl"}
                     <div id="topBar" class="d-flex justify-content-between flex-fill p-1 border rounded bg-light d-print-none">
                         <div class="p-1">
                             {if $chapter eq 1}
@@ -121,9 +120,6 @@
     				<li><a class="dropdown-item" href="javascript:void(0)" data-color="#000000">Black</a></li>
 			</ul>
 			</div>
-			{if isset($smarty.session.user)}
-			<a href="#" class="btn btn-sm btn-dark chapter-link" data-bs-toggle="modal" data-bs-target="#notesModal"><i class="bi bi-journal-text"></i></a>                     
-			{/if}
 			</div>
                         <div class="p-1">
                             {if $chapter != $max}
@@ -148,7 +144,7 @@
             </div>
         </div>
         {if empty($Error)}
-        <p class="text-center text-muted d-print-none"><small>The Holy Bible, King James Version.</small> <i class="fab fa-creative-commons-pd-alt"></i></p>
+        <p class="text-center text-muted d-print-none">{if isset($bible_permissions)}{$bible_permissions}{/if}</i></p>
         {/if}
     </div>
     {include file="footer.tpl"}
@@ -158,7 +154,6 @@
     {include file="analytics.tpl"}
     {include file="bookmark.tpl"}
     {include file="jquery.tpl"}
-    <script src="/js/notes.js"></script>
     <script src="/js/textCustomizer.js"></script>
 </body>
 

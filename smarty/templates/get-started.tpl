@@ -35,7 +35,6 @@
                 <ul class="list-group">
                     <li class="list-group-item"><strong>Smarty Template Engine</strong> (Included in repository)</li>
                     <li class="list-group-item"><strong>Bootstrap 5 & Icons</strong> (Loaded via CDN)</li>
-                    <li class="list-group-item"><strong>Quill JS</strong> (Included for article editing)</li>
                 </ul>
             </div>
         </div>
@@ -47,14 +46,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Database Integration <i class="bi bi-database ms-1" style="color:#0d6efd"></i></h5>
                         <p class="card-text">Connect your Bible database to display scripture and browse with ease. The framework uses optimized queries for rapid retrieval.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-dark h-100 border-1 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Article CMS <i class="bi bi-file-earmark-text ms-1" style="color:#ff5733"></i></h5>
-                        <p class="card-text">Manage articles and study guides with a built-in CMS. Features rich text editing via Quill JS and automated homepage updates. <a class="text-decoration-none fw-bold" href="/login">Test CMS</a></p>
                     </div>
                 </div>
             </div>
@@ -75,7 +66,7 @@
                     <ol>
                         <li class="mb-2"><strong>Clone the Repository:</strong> Fork or clone the project from GitHub to your local environment or server.</li>
                         <li class="mb-2"><strong>Database Setup:</strong> Import your SQL Bible data into your MySQL/MariaDB instance.</li>
-                        <li class="mb-2"><strong>Run Web Installer:</strong> Use the built-in web-based installer to configure your database connection and environment variables.</li>
+                        <li class="mb-2"><strong>Run Web Installer:</strong> Use the built-in web-based installer to configure your database connection.</li>
                         <li class="mb-2"><strong>Customize Templates:</strong> Modify the Smarty `.tpl` files to match your ministry or personal branding.</li>
                     </ol>
                 </div>
@@ -86,7 +77,6 @@
         <p>As an open-source project, BibleBridge relies on community feedback and contributions. You can help shape the future of the framework in several ways:</p>
         <ul class="square-bullets">
             <li><strong>Dynamic Bookmarking:</strong> Explore and improve our bookmarking logic that integrates passages directly into the user navigation.</li>
-            <li><strong>Personal Study Notes:</strong> Help refine the dashboard system where registered users can store reflections and insights.</li>
             <li><strong>Feature Requests:</strong> Submit your ideas for future enhancements via GitHub Issues to help create a better experience for everyone.</li>
         </ul>
 
