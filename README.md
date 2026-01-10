@@ -1,7 +1,28 @@
-# 📖 BibleBridge Framework v1.6  
-**A lean, schema-agnostic web engine for presenting Bible databases.**
+# 📖 BibleBridge Framework v1.6
 
-BibleBridge Framework is a self-hosted Bible-reading engine designed to bridge the gap between raw Scripture databases and modern web interfaces. It serves as a flexible foundation for developers, churches, and ministries to build reliable Scripture-based platforms and integrate Bible data into their own ecosystems.
+**BibleBridge Framework** is a self-hosted Bible-reading and search engine designed to bridge the gap between raw Scripture databases and modern web interfaces.
+
+At its core is an **Adaptive Input Processor**—a logic layer that normalizes how humans actually reference Scripture (typing, shorthand, or voice)—enabling **intelligent navigation** and **context-aware resolution** while remaining entirely **database-neutral**.
+
+---
+
+## 🧠 The Power Behind BibleBridge
+
+Most Bible software assumes clean, structured input. BibleBridge does not.
+
+It doesn’t just search; it **interprets intent**. The Adaptive Input Processor normalizes real-world input *before* resolution:
+
+* **Linguistic Intelligence:** Handles ordinal words (`first john`), suffixes (`1st john`), and shorthand (`rom 8`).
+* **Phonetic Correction:** Real-time correction for voice-to-text homophones (e.g., `to timothy` → `2 Timothy`).
+* **Cross-Lingual & Legacy Support:** Resolves English abbreviations (`Rev 22`) even in non-English datasets (e.g., French `Apocalypse`).
+* **Scholarly Aliases:** Supports historical and Hebrew names (`Canticles`, `Qoheleth`, `Tehillim`).
+* **Zero-Friction Navigation:** State-aware jumps (e.g., typing 5 while in Matthew resolves to Matthew 5) and smart defaults (e.g., John → John 1).
+
+This processor powers:
+- Search
+- URL resolution
+- Navigation
+- Experimental voice features
 
 ---
 
@@ -15,13 +36,13 @@ This short video demonstrates how the framework dynamically adapts to different 
 
 ## 🎯 Purpose
 
-BibleBridge exists to simplify how Bible data is presented and managed on the web. It provides practical tools for studying and publishing Scripture-based content—without locking users into proprietary platforms or rigid data formats.
+BibleBridge exists to simplify how Bible data is presented **and interpreted** on the web.
 
-Whether you are:
-- A **developer** working with an existing Bible database, or  
-- A **church or ministry** seeking a customizable Bible-reading platform,
+It is designed for:
+- **Developers** integrating existing Bible databases
+- **Churches & ministries** seeking a reliable, extensible Scripture platform
 
-BibleBridge is built to adapt to your data and workflow.
+BibleBridge adapts to your data without forcing your users to adapt their behavior.
 
 ---
 
@@ -71,8 +92,8 @@ Connect your existing Bible database and present it through a clean, responsive 
 
 ## 🛡️ Security Recommendations
 * Set configuration files (`./config/config.php`, `./config/connect.php`) to `644`.
-* **Optional:** Move configuration files outside the public web root for maximum security.
-* Update `settings.php` if directories are relocated to ensure paths remain valid.
+* **Recommended:** Move configuration files outside the public web root for maximum security.
+* **Important:** If you relocate any configuration or core directories, update `settings.php` to reflect their new paths.
 
 ---
 
@@ -85,7 +106,7 @@ Connect your existing Bible database and present it through a clean, responsive 
 
 ### **v1.5**
 * User settings for font size and color.
-* Personal Bible notes for registered users.
+* ~~Personal Bible notes for registered users.~~
 * Improved SEO-friendly URLs.
 
 ---
