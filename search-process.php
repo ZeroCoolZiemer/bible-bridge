@@ -158,15 +158,20 @@ elseif (array_find($holyBook, $bookTitleList_nospaces)) {
     exit();
 }
 
-$find_book = preg_replace('/\s+/', '+', $find_book);
 $find_book = strtolower($find_book);
 
+$urlEncodedVersion = urlencode($selectedVersion);
+$urlEncodedBook    = urlencode($find_book);
+$chapterInt        = (int) $chapter;
+$urlEncodedVerses  = urlencode($verses);
+
 if (empty($book['verses'])) {
-    header('Location: ' . $website . 'bible/' . $selectedVersion .'/' . $find_book . '/' . $chapter);
+    header('Location: ' . $website . 'bible/' . $urlEncodedVersion .'/' . $urlEncodedBook . '/' . $chapterInt);
     exit();
 } else {
-    header('Location: ' . $website . 'bible/' . $selectedVersion .'/' . $find_book . '/' . $chapter . '/' . $verses);
+    header('Location: ' . $website . 'bible/' . $urlEncodedVersion .'/' . $urlEncodedBook . '/' . $chapterInt . '/' . $urlEncodedVerses);
     exit();
 }
 ?>
+
 
