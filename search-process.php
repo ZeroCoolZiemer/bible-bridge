@@ -8,6 +8,9 @@ $searchTerm = isset($_GET['searchTerm']) ? urldecode($_GET['searchTerm']) : '';
 if (preg_match('/\d/', $searchTerm)) {
 $searchTerm = str_replace(' ', '', $searchTerm);
 }
+
+$searchTerm = str_ireplace(['first', 'second', 'third'], ['1', '2', '3'], $searchTerm);
+
 $searchTerm = str_replace(['1st', '2nd', '3rd'], ['1', '2', '3'], $searchTerm);
 
 $previous_search = isset($_GET['previous_search']) ? trim(htmlspecialchars($_GET['previous_search'], ENT_QUOTES, 'UTF-8')) : '';
@@ -85,12 +88,15 @@ $new_testament = [
     'Revelation'
 ];
 
+$aliases = [ 19 => 'Tehillim', 21 => 'Qoheleth', 22 => 'Canticles', ];
+
 $bookname = $old_testament + $new_testament;
 
 $bookname_nospaces = str_replace(" ", "", $bookname);
 
 $bookTitleList_nospaces = str_replace(" ", "", $bookTitleList);
- 
+
+$aliases_nospaces = str_replace(" ", "", $aliases);
 
 if ($_GET) {
     $parts = preg_split('/\s*:\s*/', trim($searchTerm, " ;"));
@@ -153,6 +159,10 @@ elseif (array_find($holyBook, $bookTitleList_nospaces)) {
     $key = array_find($holyBook, $bookTitleList_nospaces);
     $find_book = $bookname[$key];
 
+}
+elseif (array_find($holyBook, $aliases_nospaces)) {
+    $key = array_find($holyBook, $aliases_nospaces);
+    $find_book = $bookname[$key];
 } else {
     header('Location: ' . $website . 'search-results.php?searchTerm=' . urlencode($searchTerm) . '&page=1');
     exit();
@@ -173,5 +183,3 @@ if (empty($book['verses'])) {
     exit();
 }
 ?>
-
-
