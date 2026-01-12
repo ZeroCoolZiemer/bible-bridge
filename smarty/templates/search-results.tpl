@@ -59,7 +59,7 @@
                             {foreach $results as $row}
                             <tr>
                                 <td class="text-nowrap">{$row.$bookColumn} {$row[$chapterColumn]}:{$row[$verseColumn]}</td>
-                                <td class="verses">{$row[$verseTextColumn]|highlight:$searchTerm}</td>
+                                <td class="verses">{$row[$verseTextColumn]|highlight:$searchTerm nofilter}</td>
                             </tr>
                             {/foreach}
                         </tbody>

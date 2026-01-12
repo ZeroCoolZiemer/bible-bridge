@@ -5,6 +5,8 @@ use Smarty\Smarty;
 
 $smarty = new Smarty();
 
+$smarty->setEscapeHtml(true);
+
 $baseDir = __DIR__; 
 
 $smarty->setTemplateDir($baseDir . '/smarty/templates');

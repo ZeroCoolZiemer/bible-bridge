@@ -89,7 +89,7 @@
                         <h1><span id="bookName" class="book-name">{$row[$bookNameColumn]}</span> <span id="chapterNumber">{$chapter}</span>{if isset($verse) AND $verse != ""}:{$verse}{/if}</h1>
                     </div>
                     {/if}
-                    <p class="verses"><span class="verseNumber">{$row[$verseColumn]}</span> {$row[$verseTextColumn]}</p>
+                    <p class="verses"><span class="verseNumber">{$row[$verseColumn]}</span> {$row[$verseTextColumn] nofilter}</p>
                     {if $row@last}
                     <div class="text-center mb-3">
                         {if $verse != ""}
